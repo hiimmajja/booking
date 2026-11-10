@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rezerviši termin u salonu u Tuzli putem online forme.">
+    <title>Beauty Booking Tuzla | Rezervacija</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="slike/logo.png">
+</head>
+<body>
+
+    <!-- ZAGLAVLJE -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="pocetna.html">
+                <img class="logo" src="slike/logo.png" alt="Logo Beauty Booking">
+                <span class="logo-title">Beauty Booking</span>
+            </a>
+            <nav aria-label="Glavna navigacija">
+                <ul>
+                    <li><a href="pocetna.html">Početna</a></li>
+                    <li><a href="saloni.html">Saloni</a></li>
+                    <li><a href="tretmani.html">Tretmani</a></li>
+                    <li><a href="recenzije.html">Recenzije</a></li>
+                    <li><a class="active" href="rezervacija.html" aria-current="page">Rezervacija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <a class="btn btn-primary header-cta" href="rezervacija.html">Rezerviši termin</a>
+        </div>
+    </header>
+
+    <section class="page-head">
+        <div class="page-head-inner">
+            <h1>Rezerviši termin</h1>
+            <p>Popuni formu ispod. Salon će ti potvrditi termin putem e-maila ili telefona.</p>
+        </div>
+    </section>
+
+    <main class="section">
+        <div class="form-layout">
+
+            <form class="form-card" action="#" method="post">
+
+                <fieldset>
+                    <legend>Tvoji podaci</legend>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="ime">Ime</label>
+                            <input type="text" id="ime" name="ime" required autocomplete="given-name">
+                        </div>
+                        <div class="field">
+                            <label for="prezime">Prezime</label>
+                            <input type="text" id="prezime" name="prezime" required autocomplete="family-name">
+                        </div>
+                        <div class="field">
+                            <label for="email">E-mail adresa</label>
+                            <input type="email" id="email" name="email" required autocomplete="email" placeholder="ime@primjer.ba">
+                        </div>
+                        <div class="field">
+                            <label for="telefon">Broj telefona</label>
+                            <input type="tel" id="telefon" name="telefon" required autocomplete="tel" placeholder="+387 6x xxx xxx">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Termin</legend>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="salon">Salon</label>
+                            <select id="salon" name="salon" required>
+                                <option value="">Odaberi salon</option>
+                                <option>Salon Lamija</option>
+                                <option>Studio Pramen</option>
+                                <option>Hair Spa Dalija</option>
+                                <option>Nail Studio Amra</option>
+                                <option>Studio Lice</option>
+                                <option>Glow Njega lica</option>
+                                <option>Spa Oaza</option>
+                                <option>Brow Atelier Mia</option>
+                                <option>Barber Kralj</option>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="tretman">Tretman</label>
+                            <select id="tretman" name="tretman" required>
+                                <option value="">Odaberi tretman</option>
+                                <optgroup label="Frizura i stilizovanje">
+                                    <option>Žensko šišanje</option>
+                                    <option>Farbanje korijena</option>
+                                    <option>Ekstenzije kose</option>
+                                    <option>Svečana frizura</option>
+                                </optgroup>
+                                <optgroup label="Manikir i pedikir">
+                                    <option>Klasični manikir</option>
+                                    <option>Gel lak</option>
+                                    <option>Nadogradnja noktiju</option>
+                                </optgroup>
+                                <optgroup label="Masaža i spa">
+                                    <option>Relax masaža leđa</option>
+                                    <option>Masaža cijelog tijela</option>
+                                </optgroup>
+                                <optgroup label="Šminkanje">
+                                    <option>Dnevno šminkanje</option>
+                                    <option>Večernje šminkanje</option>
+                                </optgroup>
+                                <optgroup label="Njega lica">
+                                    <option>Dubinsko čišćenje lica</option>
+                                    <option>Hidratantni tretman</option>
+                                </optgroup>
+                                <optgroup label="Trepavice i obrve">
+                                    <option>Lash lifting</option>
+                                    <option>Oblikovanje obrva</option>
+                                </optgroup>
+                                <optgroup label="Barber shop">
+                                    <option>Muško šišanje</option>
+                                    <option>Brijanje i njega brade</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label for="datum">Datum</label>
+                            <input type="date" id="datum" name="datum" required>
+                        </div>
+                        <div class="field">
+                            <label for="vrijeme">Vrijeme</label>
+                            <select id="vrijeme" name="vrijeme" required>
+                                <option value="">Odaberi vrijeme</option>
+                                <option>08:00</option><option>09:00</option><option>10:00</option><option>11:00</option><option>12:00</option><option>13:00</option><option>14:00</option><option>15:00</option><option>16:00</option><option>17:00</option><option>18:00</option><option>19:00</option>
+                            </select>
+                        </div>
+                        <div class="field full">
+                            <label for="napomena">Napomena (nije obavezno)</label>
+                            <textarea id="napomena" name="napomena" placeholder="Npr. želim isti stilista kao prošli put."></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <label class="check">
+                    <input type="checkbox" name="saglasnost" required>
+                    <span>Slažem se da Beauty Booking koristi moje podatke isključivo za potvrdu rezervacije.</span>
+                </label>
+
+                <button class="btn btn-primary" type="submit">Pošalji zahtjev za termin</button>
+            </form>
+
+            <aside class="side-note">
+                <h3>Prije nego pošalješ</h3>
+                <ul>
+                    <li>Termin je potvrđen tek kada ti salon odgovori.</li>
+                    <li>Otkazivanje je moguće najkasnije 24 sata prije termina.</li>
+                    <li>Ako kasniš više od 15 minuta, javi se salonu telefonom.</li>
+                    <li>Cijene tretmana pogledaj na stranici <a href="tretmani.html">Tretmani</a>.</li>
+                </ul>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- PODNOŽJE -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Beauty Booking Tuzla d.o.o.</h3>
+                <p>📍 Turalibegova 24, 75000 Tuzla, BiH</p>
+                <p>📞 +387 35 250 111</p>
+                <p>✉️ info@beautybooking.ba</p>
+            </div>
+            <div>
+                <h3>Stranice</h3>
+                <ul>
+                    <li><a href="pocetna.html">Početna</a></li>
+                    <li><a href="saloni.html">Saloni</a></li>
+                    <li><a href="tretmani.html">Tretmani</a></li>
+                    <li><a href="recenzije.html">Recenzije</a></li>
+                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Radno vrijeme</h3>
+                <p>Ponedjeljak – subota</p>
+                <p>08:00 – 20:00h</p>
+                <p>Nedjelja: zatvoreno</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2026 Beauty Booking Tuzla. Sva prava zadržana.
+        </div>
+    </footer>
+
+</body>
+</html>

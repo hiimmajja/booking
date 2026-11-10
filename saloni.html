@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pregled frizerskih, kozmetičkih i spa salona u Tuzli.">
+    <title>Beauty Booking Tuzla | Saloni</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="slike/logo.png">
+</head>
+<body>
+
+    <!-- ZAGLAVLJE -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="pocetna.html">
+                <img class="logo" src="slike/logo.png" alt="Logo Beauty Booking">
+                <span class="logo-title">Beauty Booking</span>
+            </a>
+            <nav aria-label="Glavna navigacija">
+                <ul>
+                    <li><a href="pocetna.html">Početna</a></li>
+                    <li><a class="active" href="saloni.html" aria-current="page">Saloni</a></li>
+                    <li><a href="tretmani.html">Tretmani</a></li>
+                    <li><a href="recenzije.html">Recenzije</a></li>
+                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <a class="btn btn-primary header-cta" href="rezervacija.html">Rezerviši termin</a>
+        </div>
+    </header>
+
+    <section class="page-head">
+        <div class="page-head-inner">
+            <h1>Saloni u Tuzli</h1>
+            <p>Pregledaj lokalne salone, pročitaj ocjene i odaberi onaj koji ti najviše odgovara.</p>
+        </div>
+    </section>
+
+    <main class="section">
+        <form class="toolbar" action="saloni.html" method="get" role="search">
+            <label>Pretraga
+                <input type="search" name="pretraga" placeholder="Naziv salona">
+            </label>
+            <label>Kategorija
+                <select name="kategorija">
+                    <option value="">Sve kategorije</option>
+                    <option>Frizura i stilizovanje</option>
+                    <option>Farbanje i pramenovi</option>
+                    <option>Pranje i njega kose</option>
+                    <option>Manikir i gel lak</option>
+                    <option>Šminkanje</option>
+                    <option>Njega lica</option>
+                    <option>Obrve i trepavice</option>
+                    <option>Masaža i spa</option>
+                    <option>Barber shop</option>
+                </select>
+            </label>
+            <label>Sortiraj po
+                <select name="sortiranje">
+                    <option>Najbolje ocijenjeni</option>
+                    <option>Naziv (A–Z)</option>
+                    <option>Najviše ocjena</option>
+                </select>
+            </label>
+            <button class="btn btn-primary" type="submit">Primijeni</button>
+        </form>
+
+        <div class="salon-grid">
+
+            <article class="salon-card">
+                <img src="slike/haircut.jpg" alt="Salon Lamija">
+                <div class="salon-body">
+                    <span class="tag">Frizura i stilizovanje</span>
+                    <h3>Salon Lamija</h3>
+                    <p class="rating" aria-label="Ocjena 4,8 od 5">★★★★★ <small>4,8 (124 ocjena)</small></p>
+                    <p>Šišanje, feniranje i svečane frizure.</p>
+                    <p>📍 Turalibegova 12, Tuzla</p>
+                    <p>🕒 Pon–Sub 08:00–20:00</p>
+                    <div class="salon-actions">
+                        <a class="btn btn-soft" href="tretmani.html">Tretmani</a>
+                        <a class="btn btn-primary" href="rezervacija.html">Rezerviši</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="salon-card">
+                <img src="slike/foil.jpg" alt="Studio Pramen">
+                <div class="salon-body">
+                    <span class="tag">Farbanje i pramenovi</span>
+                    <h3>Studio Pramen</h3>
+                    <p class="rating" aria-label="Ocjena 4,7 od 5">★★★★★ <small>4,7 (67 ocjena)</small></p>
+                    <p>Balayage, pramenovi u folijama i toniranje kose.</p>
+                    <p>📍 Slatina 3, Tuzla</p>
+                    <p>🕒 Pon–Sub 09:00–19:00</p>
+                    <div class="salon-actions">
+                        <a class="btn btn-soft" href="tretmani.html">Tretmani</a>
+                        <a class="btn btn-primary" href="rezervacija.html">Rezerviši</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="salon-card">
+                <img src="slike/hairwash.jpg" alt="Hair Spa Dalija">
+                <div class="salon-body">
+                    <span class="tag">Pranje i njega kose</span>
+                    <h3>Hair Spa Dalija</h3>
+                    <p class="rating" aria-label="Ocjena 4,6 od 5">★★★★☆ <small>4,6 (38 ocjena)</small></p>
+                    <p>Regenerativne maske, dubinska njega i pranje kose.</p>
+                    <p>📍 Mejdan 21, Tuzla</p>
+                    <p>🕒 Pon–Sub 08:00–18:00</p>
+                    <div class="salon-actions">
+                        <a class="btn btn-soft" href="tretmani.html">Tretmani</a>
+                        <a class="btn btn-primary" href="rezervacija.html">Rezerviši</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="salon-card">
+                <img src="slike/nails.jpg" alt="Nail Studio Amra">
+                <div class="salon-body">
+                    <span class="tag">Manikir i gel lak</span>
+                    <h3>Nail Studio Amra</h3>
+                    <p class="rating" aria-label="Ocjena 4,9 od 5">★★★★★ <small>4,9 (98 ocjena)</small></p>
+                    <p>Gel lak, nadogradnja noktiju i nail art.</p>
+                    <p>📍 Maršala Tita 45, Tuzla</p>
+                    <p>🕒 Pon–Sub 09:00–19:00</p>
+                    <div class="salon-actions">
+                        <a class="btn btn-soft" href="tretmani.html">Tretmani</a>
+                        <a class="btn btn-primary" href="rezervacija.html">Rezerviši</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="salon-card">
+                <img src="slike/setting.jpg" alt="Studio Lice">
+                <div class="salon-body">
+                    <span class="tag">Šminkanje</span>
+                    <h3>Studio Lice</h3>
+                    <p class="rating" aria-label="Ocjena 4,7 od 5">★★★★★ <small>4,7 (61 ocjena)</small></p>
+                    <p>Dnevno i večernje šminkanje, šminkanje za mladenke.</p>
+                    <p>📍 Bulevar Meše Selimovića 30, Tuzla</p>
+                    <p>🕒 Pon–Pet 09:00–18:00</p>
+                    <div class="salon-actions">
+                        <a class="btn btn-soft" href="tretmani.html">Tretmani</a>
+                        <a class="btn btn-primary" href="rezervacija.html">Rezerviši</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="salon-card">
+                <img src="slike/products.jpg" alt="Glow Njega lica">
+                <div class="salon-body">
+                    <span class="tag">Njega lica</span>
+                    <h3>Glow Njega lica</h3>
+                    <p class="rating" aria-label="Ocjena 4,5 od 5">★★★★☆ <small>4,5 (54 ocjena)</small></p>
+                    <p>Čišćenje lica, piling i hidratantni tretmani.</p>
+                    <p>📍 Slatina 14, Tuzla</p>
+                    <p>🕒 Pon–Sub 08:00–17:00</p>
+                    <div class="salon-actions">
+                        <a class="btn btn-soft" href="tretmani.html">Tretmani</a>
+                        <a class="btn btn-primary" href="rezervacija.html">Rezerviši</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="salon-card">
+                <img src="slike/spa.jpg" alt="Spa Oaza">
+                <div class="salon-body">
+                    <span class="tag">Masaža i spa</span>
+                    <h3>Spa Oaza</h3>
+                    <p class="rating" aria-label="Ocjena 4,6 od 5">★★★★☆ <small>4,6 (76 ocjena)</small></p>
+                    <p>Maske za lice, aromaterapija i relaks tretmani.</p>
+                    <p>📍 Mejdan 8, Tuzla</p>
+                    <p>🕒 Pon–Sub 10:00–20:00</p>
+                    <div class="salon-actions">
+                        <a class="btn btn-soft" href="tretmani.html">Tretmani</a>
+                        <a class="btn btn-primary" href="rezervacija.html">Rezerviši</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="salon-card">
+                <img src="slike/brow.jpg" alt="Brow Atelier Mia">
+                <div class="salon-body">
+                    <span class="tag">Obrve i trepavice</span>
+                    <h3>Brow Atelier Mia</h3>
+                    <p class="rating" aria-label="Ocjena 4,8 od 5">★★★★★ <small>4,8 (45 ocjena)</small></p>
+                    <p>Oblikovanje obrva, lash lifting i nadogradnja trepavica.</p>
+                    <p>📍 Rudarska 18, Tuzla</p>
+                    <p>🕒 Pon–Pet 09:00–17:00</p>
+                    <div class="salon-actions">
+                        <a class="btn btn-soft" href="tretmani.html">Tretmani</a>
+                        <a class="btn btn-primary" href="rezervacija.html">Rezerviši</a>
+                    </div>
+                </div>
+            </article>
+
+            <article class="salon-card">
+                <img src="slike/barber-shop.jpg" alt="Barber Kralj">
+                <div class="salon-body">
+                    <span class="tag">Barber shop</span>
+                    <h3>Barber Kralj</h3>
+                    <p class="rating" aria-label="Ocjena 4,8 od 5">★★★★★ <small>4,8 (142 ocjena)</small></p>
+                    <p>Muško šišanje, brijanje i njega brade.</p>
+                    <p>📍 Rudarska 6, Tuzla</p>
+                    <p>🕒 Pon–Sub 08:00–20:00</p>
+                    <div class="salon-actions">
+                        <a class="btn btn-soft" href="tretmani.html">Tretmani</a>
+                        <a class="btn btn-primary" href="rezervacija.html">Rezerviši</a>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- PODNOŽJE -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Beauty Booking Tuzla d.o.o.</h3>
+                <p>📍 Turalibegova 24, 75000 Tuzla, BiH</p>
+                <p>📞 +387 35 250 111</p>
+                <p>✉️ info@beautybooking.ba</p>
+            </div>
+            <div>
+                <h3>Stranice</h3>
+                <ul>
+                    <li><a href="pocetna.html">Početna</a></li>
+                    <li><a href="saloni.html">Saloni</a></li>
+                    <li><a href="tretmani.html">Tretmani</a></li>
+                    <li><a href="recenzije.html">Recenzije</a></li>
+                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Radno vrijeme</h3>
+                <p>Ponedjeljak – subota</p>
+                <p>08:00 – 20:00h</p>
+                <p>Nedjelja: zatvoreno</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2026 Beauty Booking Tuzla. Sva prava zadržana.
+        </div>
+    </footer>
+
+</body>
+</html>

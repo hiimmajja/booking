@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontaktiraj Beauty Booking Tuzla: adresa, telefon, e-mail i kontakt forma.">
+    <title>Beauty Booking Tuzla | Kontakt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="slike/logo.png">
+</head>
+<body>
+
+    <!-- ZAGLAVLJE -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="pocetna.html">
+                <img class="logo" src="slike/logo.png" alt="Logo Beauty Booking">
+                <span class="logo-title">Beauty Booking</span>
+            </a>
+            <nav aria-label="Glavna navigacija">
+                <ul>
+                    <li><a href="pocetna.html">Početna</a></li>
+                    <li><a href="saloni.html">Saloni</a></li>
+                    <li><a href="tretmani.html">Tretmani</a></li>
+                    <li><a href="recenzije.html">Recenzije</a></li>
+                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a class="active" href="kontakt.html" aria-current="page">Kontakt</a></li>
+                </ul>
+            </nav>
+            <a class="btn btn-primary header-cta" href="rezervacija.html">Rezerviši termin</a>
+        </div>
+    </header>
+
+    <section class="page-head">
+        <div class="page-head-inner">
+            <h1>Kontakt</h1>
+            <p>Imaš pitanje o rezervaciji ili želiš da tvoj salon bude na našoj platformi? Javi nam se.</p>
+        </div>
+    </section>
+
+    <main class="section">
+
+        <div class="info-cards">
+            <div class="info-card">
+                <h3>Adresa</h3>
+                <p>Turalibegova 24<br>75000 Tuzla, BiH</p>
+            </div>
+            <div class="info-card">
+                <h3>Telefon i e-mail</h3>
+                <p>+387 35 250 111<br>info@beautybooking.ba</p>
+            </div>
+            <div class="info-card">
+                <h3>Radno vrijeme</h3>
+                <p>Pon – Sub: 08:00 – 20:00h<br>Nedjelja: zatvoreno</p>
+            </div>
+        </div>
+
+        <div class="form-layout">
+            <form class="form-card" action="#" method="post">
+                <fieldset>
+                    <legend>Pošalji nam poruku</legend>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="k-ime">Ime i prezime</label>
+                            <input type="text" id="k-ime" name="ime" required autocomplete="name">
+                        </div>
+                        <div class="field">
+                            <label for="k-email">E-mail adresa</label>
+                            <input type="email" id="k-email" name="email" required autocomplete="email">
+                        </div>
+                        <div class="field full">
+                            <label for="k-tema">Tema</label>
+                            <select id="k-tema" name="tema">
+                                <option>Pitanje o rezervaciji</option>
+                                <option>Otkazivanje termina</option>
+                                <option>Želim dodati svoj salon</option>
+                                <option>Ostalo</option>
+                            </select>
+                        </div>
+                        <div class="field full">
+                            <label for="k-poruka">Poruka</label>
+                            <textarea id="k-poruka" name="poruka" required></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+                <button class="btn btn-primary" type="submit">Pošalji poruku</button>
+            </form>
+
+            <aside class="side-note">
+                <h3>Vlasnik si salona?</h3>
+                <p>Dodaj svoj salon na Beauty Booking i primaj rezervacije online. Odaberi temu „Želim dodati svoj salon“ i javit ćemo ti se u roku od jednog radnog dana.</p>
+            </aside>
+        </div>
+
+        <div class="map">
+            <iframe title="Karta: Tuzla" loading="lazy"
+                src="https://www.openstreetmap.org/export/embed.html?bbox=18.650%2C44.530%2C18.685%2C44.548&amp;layer=mapnik&amp;marker=44.5384%2C18.6671"></iframe>
+        </div>
+    </main>
+
+    <!-- PODNOŽJE -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Beauty Booking Tuzla d.o.o.</h3>
+                <p>📍 Turalibegova 24, 75000 Tuzla, BiH</p>
+                <p>📞 +387 35 250 111</p>
+                <p>✉️ info@beautybooking.ba</p>
+            </div>
+            <div>
+                <h3>Stranice</h3>
+                <ul>
+                    <li><a href="pocetna.html">Početna</a></li>
+                    <li><a href="saloni.html">Saloni</a></li>
+                    <li><a href="tretmani.html">Tretmani</a></li>
+                    <li><a href="recenzije.html">Recenzije</a></li>
+                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Radno vrijeme</h3>
+                <p>Ponedjeljak – subota</p>
+                <p>08:00 – 20:00h</p>
+                <p>Nedjelja: zatvoreno</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2026 Beauty Booking Tuzla. Sva prava zadržana.
+        </div>
+    </footer>
+
+</body>
+</html>

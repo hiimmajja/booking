@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Utisci korisnika o salonima i tretmanima na platformi Beauty Booking Tuzla.">
+    <title>Beauty Booking Tuzla | Recenzije</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="slike/logo.png">
+</head>
+<body>
+
+    <!-- ZAGLAVLJE -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="pocetna.html">
+                <img class="logo" src="slike/logo.png" alt="Logo Beauty Booking">
+                <span class="logo-title">Beauty Booking</span>
+            </a>
+            <nav aria-label="Glavna navigacija">
+                <ul>
+                    <li><a href="pocetna.html">Početna</a></li>
+                    <li><a href="saloni.html">Saloni</a></li>
+                    <li><a href="tretmani.html">Tretmani</a></li>
+                    <li><a class="active" href="recenzije.html" aria-current="page">Recenzije</a></li>
+                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <a class="btn btn-primary header-cta" href="rezervacija.html">Rezerviši termin</a>
+        </div>
+    </header>
+
+    <section class="page-head">
+        <div class="page-head-inner">
+            <h1>Recenzije korisnika</h1>
+            <p>Iskustva onih koji su već rezervisali termin preko Beauty Bookinga.</p>
+        </div>
+    </section>
+
+    <main class="section">
+
+        <div class="review-summary">
+            <div class="review-score">4,8</div>
+            <div>
+                <p class="rating" aria-label="Prosječna ocjena 4,8 od 5">★★★★★</p>
+                <p>Prosječna ocjena na osnovu 705 recenzija</p>
+            </div>
+        </div>
+
+        <div class="review-grid">
+
+            <article class="review-card">
+                <p class="rating" aria-label="Ocjena 5 od 5">★★★★★</p>
+                <blockquote>„Termin sam rezervisala za par minuta, a gel lak je izdržao skoro tri sedmice. Preporuka!“</blockquote>
+                <div class="review-author">
+                    <span class="avatar" aria-hidden="true">A</span>
+                    <div>
+                        <strong>Amina H.</strong>
+                        <small>Nail Studio Amra · Oktobar 2026.</small>
+                    </div>
+                </div>
+            </article>
+
+            <article class="review-card">
+                <p class="rating" aria-label="Ocjena 5 od 5">★★★★★</p>
+                <blockquote>„Odlično šišanje i brijanje, bez čekanja jer sam termin rezervisao unaprijed.“</blockquote>
+                <div class="review-author">
+                    <span class="avatar" aria-hidden="true">H</span>
+                    <div>
+                        <strong>Haris M.</strong>
+                        <small>Barber Kralj · Oktobar 2026.</small>
+                    </div>
+                </div>
+            </article>
+
+            <article class="review-card">
+                <p class="rating" aria-label="Ocjena 5 od 5">★★★★★</p>
+                <blockquote>„Konačno platforma gdje vidim cijene prije dolaska. Frizura je tačno ono što sam željela.“</blockquote>
+                <div class="review-author">
+                    <span class="avatar" aria-hidden="true">S</span>
+                    <div>
+                        <strong>Selma K.</strong>
+                        <small>Salon Lamija · Septembar 2026.</small>
+                    </div>
+                </div>
+            </article>
+
+            <article class="review-card">
+                <p class="rating" aria-label="Ocjena 4 od 5">★★★★☆</p>
+                <blockquote>„Masaža je bila izvrsna i opuštajuća. Jedino bih voljela više slobodnih termina vikendom.“</blockquote>
+                <div class="review-author">
+                    <span class="avatar" aria-hidden="true">L</span>
+                    <div>
+                        <strong>Lejla D.</strong>
+                        <small>Spa Oaza · Septembar 2026.</small>
+                    </div>
+                </div>
+            </article>
+
+            <article class="review-card">
+                <p class="rating" aria-label="Ocjena 5 od 5">★★★★★</p>
+                <blockquote>„Šminkanje za vjenčanje prošlo je savršeno. Sve je potvrđeno na vrijeme putem e-maila.“</blockquote>
+                <div class="review-author">
+                    <span class="avatar" aria-hidden="true">E</span>
+                    <div>
+                        <strong>Emina S.</strong>
+                        <small>Studio Lice · August 2026.</small>
+                    </div>
+                </div>
+            </article>
+
+            <article class="review-card">
+                <p class="rating" aria-label="Ocjena 4 od 5">★★★★☆</p>
+                <blockquote>„Ljubazno osoblje i vidljiv rezultat nakon prvog tretmana. Rezervacija je bila jednostavna.“</blockquote>
+                <div class="review-author">
+                    <span class="avatar" aria-hidden="true">D</span>
+                    <div>
+                        <strong>Dino B.</strong>
+                        <small>Glow Njega lica · August 2026.</small>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="form-layout">
+            <form class="form-card" action="#" method="post">
+                <fieldset>
+                    <legend>Ostavi svoju recenziju</legend>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="r-ime">Ime</label>
+                            <input type="text" id="r-ime" name="ime" required autocomplete="given-name">
+                        </div>
+                        <div class="field">
+                            <label for="r-salon">Salon</label>
+                            <select id="r-salon" name="salon" required>
+                                <option value="">Odaberi salon</option>
+                                <option>Salon Lamija</option>
+                                <option>Studio Pramen</option>
+                                <option>Hair Spa Dalija</option>
+                                <option>Nail Studio Amra</option>
+                                <option>Studio Lice</option>
+                                <option>Glow Njega lica</option>
+                                <option>Spa Oaza</option>
+                                <option>Brow Atelier Mia</option>
+                                <option>Barber Kralj</option>
+                            </select>
+                        </div>
+                        <div class="field full">
+                            <label for="r-ocjena">Ocjena</label>
+                            <select id="r-ocjena" name="ocjena" required>
+                                <option value="">Odaberi ocjenu</option>
+                                <option value="5">5 – Odlično</option>
+                                <option value="4">4 – Vrlo dobro</option>
+                                <option value="3">3 – Dobro</option>
+                                <option value="2">2 – Slabo</option>
+                                <option value="1">1 – Loše</option>
+                            </select>
+                        </div>
+                        <div class="field full">
+                            <label for="r-komentar">Tvoj utisak</label>
+                            <textarea id="r-komentar" name="komentar" required placeholder="Kako je izgledao tvoj termin?"></textarea>
+                        </div>
+                    </div>
+                </fieldset>
+                <button class="btn btn-primary" type="submit">Objavi recenziju</button>
+            </form>
+
+            <aside class="side-note">
+                <h3>Zašto recenzije?</h3>
+                <p>Tvoje iskustvo pomaže drugima da pronađu pravi salon. Piši iskreno i konkretno: šta ti se svidjelo, a šta bi salon mogao poboljšati.</p>
+            </aside>
+        </div>
+    </main>
+
+    <!-- PODNOŽJE -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Beauty Booking Tuzla d.o.o.</h3>
+                <p>📍 Turalibegova 24, 75000 Tuzla, BiH</p>
+                <p>📞 +387 35 250 111</p>
+                <p>✉️ info@beautybooking.ba</p>
+            </div>
+            <div>
+                <h3>Stranice</h3>
+                <ul>
+                    <li><a href="pocetna.html">Početna</a></li>
+                    <li><a href="saloni.html">Saloni</a></li>
+                    <li><a href="tretmani.html">Tretmani</a></li>
+                    <li><a href="recenzije.html">Recenzije</a></li>
+                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Radno vrijeme</h3>
+                <p>Ponedjeljak – subota</p>
+                <p>08:00 – 20:00h</p>
+                <p>Nedjelja: zatvoreno</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2026 Beauty Booking Tuzla. Sva prava zadržana.
+        </div>
+    </footer>
+
+</body>
+</html>

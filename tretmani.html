@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Cjenovnik tretmana: frizura, nokti, masaže, šminkanje, njega lica i više.">
+    <title>Beauty Booking Tuzla | Tretmani</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="slike/logo.png">
+</head>
+<body>
+
+    <!-- ZAGLAVLJE -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="pocetna.html">
+                <img class="logo" src="slike/logo.png" alt="Logo Beauty Booking">
+                <span class="logo-title">Beauty Booking</span>
+            </a>
+            <nav aria-label="Glavna navigacija">
+                <ul>
+                    <li><a href="pocetna.html">Početna</a></li>
+                    <li><a href="saloni.html">Saloni</a></li>
+                    <li><a class="active" href="tretmani.html" aria-current="page">Tretmani</a></li>
+                    <li><a href="recenzije.html">Recenzije</a></li>
+                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <a class="btn btn-primary header-cta" href="rezervacija.html">Rezerviši termin</a>
+        </div>
+    </header>
+
+    <section class="page-head">
+        <div class="page-head-inner">
+            <h1>Tretmani i cijene</h1>
+            <p>Pregled najtraženijih usluga s okvirnim trajanjem i cijenama u konvertibilnim markama (KM).</p>
+        </div>
+    </section>
+
+    <main class="section">
+        <ul class="chips" aria-label="Brza navigacija po kategorijama">
+            <li><a href="#frizerski">Frizura i stilizovanje</a></li>
+            <li><a href="#nokti">Manikir i pedikir</a></li>
+            <li><a href="#spa">Masaža i spa</a></li>
+            <li><a href="#sminkanje">Šminkanje</a></li>
+            <li><a href="#lice">Njega lica</a></li>
+            <li><a href="#trepavice">Trepavice i obrve</a></li>
+            <li><a href="#barber">Barber shop</a></li>
+        </ul>
+
+        <div class="price-grid">
+
+            <section class="price-block" id="frizerski">
+                <h2>Frizura i stilizovanje</h2>
+                <ul class="price-list">
+                    <li><span class="t-name">Žensko šišanje</span><span class="t-time">45 min</span><span class="t-price">25 KM</span></li>
+                    <li><span class="t-name">Feniranje</span><span class="t-time">30 min</span><span class="t-price">15 KM</span></li>
+                    <li><span class="t-name">Farbanje korijena</span><span class="t-time">90 min</span><span class="t-price">45 KM</span></li>
+                    <li><span class="t-name">Pramenovi</span><span class="t-time">120 min</span><span class="t-price">70 KM</span></li>
+                    <li><span class="t-name">Ekstenzije kose</span><span class="t-time">120 min</span><span class="t-price">150 KM</span></li>
+                    <li><span class="t-name">Svečana frizura</span><span class="t-time">60 min</span><span class="t-price">50 KM</span></li>
+                </ul>
+            </section>
+
+            <section class="price-block" id="nokti">
+                <h2>Manikir i pedikir</h2>
+                <ul class="price-list">
+                    <li><span class="t-name">Klasični manikir</span><span class="t-time">40 min</span><span class="t-price">15 KM</span></li>
+                    <li><span class="t-name">Gel lak</span><span class="t-time">60 min</span><span class="t-price">30 KM</span></li>
+                    <li><span class="t-name">Nadogradnja noktiju</span><span class="t-time">120 min</span><span class="t-price">60 KM</span></li>
+                    <li><span class="t-name">Pedikir</span><span class="t-time">60 min</span><span class="t-price">35 KM</span></li>
+                </ul>
+            </section>
+
+            <section class="price-block" id="spa">
+                <h2>Masaža i spa</h2>
+                <ul class="price-list">
+                    <li><span class="t-name">Relax masaža leđa</span><span class="t-time">30 min</span><span class="t-price">30 KM</span></li>
+                    <li><span class="t-name">Masaža cijelog tijela</span><span class="t-time">60 min</span><span class="t-price">60 KM</span></li>
+                    <li><span class="t-name">Aromaterapija</span><span class="t-time">75 min</span><span class="t-price">70 KM</span></li>
+                    <li><span class="t-name">Masaža lica</span><span class="t-time">25 min</span><span class="t-price">25 KM</span></li>
+                </ul>
+            </section>
+
+            <section class="price-block" id="sminkanje">
+                <h2>Šminkanje</h2>
+                <ul class="price-list">
+                    <li><span class="t-name">Dnevno šminkanje</span><span class="t-time">40 min</span><span class="t-price">30 KM</span></li>
+                    <li><span class="t-name">Večernje šminkanje</span><span class="t-time">60 min</span><span class="t-price">45 KM</span></li>
+                    <li><span class="t-name">Šminkanje mladenke</span><span class="t-time">90 min</span><span class="t-price">120 KM</span></li>
+                </ul>
+            </section>
+
+            <section class="price-block" id="lice">
+                <h2>Njega lica</h2>
+                <ul class="price-list">
+                    <li><span class="t-name">Dubinsko čišćenje lica</span><span class="t-time">60 min</span><span class="t-price">50 KM</span></li>
+                    <li><span class="t-name">Hidratantni tretman</span><span class="t-time">45 min</span><span class="t-price">40 KM</span></li>
+                    <li><span class="t-name">Piling lica</span><span class="t-time">30 min</span><span class="t-price">30 KM</span></li>
+                </ul>
+            </section>
+
+            <section class="price-block" id="trepavice">
+                <h2>Trepavice i obrve</h2>
+                <ul class="price-list">
+                    <li><span class="t-name">Lash lifting</span><span class="t-time">60 min</span><span class="t-price">45 KM</span></li>
+                    <li><span class="t-name">Nadogradnja trepavica</span><span class="t-time">120 min</span><span class="t-price">70 KM</span></li>
+                    <li><span class="t-name">Oblikovanje obrva</span><span class="t-time">20 min</span><span class="t-price">12 KM</span></li>
+                    <li><span class="t-name">Henna za obrve</span><span class="t-time">30 min</span><span class="t-price">15 KM</span></li>
+                </ul>
+            </section>
+
+            <section class="price-block" id="barber">
+                <h2>Barber shop</h2>
+                <ul class="price-list">
+                    <li><span class="t-name">Muško šišanje</span><span class="t-time">30 min</span><span class="t-price">12 KM</span></li>
+                    <li><span class="t-name">Brijanje i njega brade</span><span class="t-time">30 min</span><span class="t-price">10 KM</span></li>
+                    <li><span class="t-name">Šišanje i brada</span><span class="t-time">50 min</span><span class="t-price">20 KM</span></li>
+                </ul>
+            </section>
+
+        </div>
+
+        <p class="price-note">Cijene su okvirne i mogu se razlikovati od salona do salona. Tačnu cijenu potvrđuje salon prilikom potvrde termina.</p>
+        <p class="section-head" style="margin:28px 0 0"><a class="btn btn-primary" href="rezervacija.html">Rezerviši termin</a></p>
+    </main>
+
+    <!-- PODNOŽJE -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Beauty Booking Tuzla d.o.o.</h3>
+                <p>📍 Turalibegova 24, 75000 Tuzla, BiH</p>
+                <p>📞 +387 35 250 111</p>
+                <p>✉️ info@beautybooking.ba</p>
+            </div>
+            <div>
+                <h3>Stranice</h3>
+                <ul>
+                    <li><a href="pocetna.html">Početna</a></li>
+                    <li><a href="saloni.html">Saloni</a></li>
+                    <li><a href="tretmani.html">Tretmani</a></li>
+                    <li><a href="recenzije.html">Recenzije</a></li>
+                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Radno vrijeme</h3>
+                <p>Ponedjeljak – subota</p>
+                <p>08:00 – 20:00h</p>
+                <p>Nedjelja: zatvoreno</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2026 Beauty Booking Tuzla. Sva prava zadržana.
+        </div>
+    </footer>
+
+</body>
+</html>

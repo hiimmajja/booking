@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Pronađi najbolje frizerske, kozmetičke i spa salone u Tuzli i rezerviši termin online.">
+    <title>Beauty Booking Tuzla | Početna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="slike/logo.png">
+</head>
+<body>
+
+    <!-- ZAGLAVLJE -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="pocetna.html">
+                <img class="logo" src="slike/logo.png" alt="Logo Beauty Booking">
+                <span class="logo-title">Beauty Booking</span>
+            </a>
+            <nav aria-label="Glavna navigacija">
+                <ul>
+                    <li><a class="active" href="pocetna.html" aria-current="page">Početna</a></li>
+                    <li><a href="saloni.html">Saloni</a></li>
+                    <li><a href="tretmani.html">Tretmani</a></li>
+                    <li><a href="recenzije.html">Recenzije</a></li>
+                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+            <a class="btn btn-primary header-cta" href="rezervacija.html">Rezerviši termin</a>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-text">
+                <h1>Tvoj sljedeći termin u Tuzli je na par klikova</h1>
+                <p>Istraži lokalne frizerske, kozmetičke i spa salone, uporedi tretmane i cijene, pa rezerviši termin bez telefonskog poziva.</p>
+
+                <form class="search" action="saloni.html" method="get" role="search">
+                    <select id="kategorija" name="kategorija" aria-label="Kategorija">
+                        <option value="">Sve kategorije</option>
+                        <option>Frizura i stilizovanje</option>
+                        <option>Farbanje i pramenovi</option>
+                        <option>Pranje i njega kose</option>
+                        <option>Manikir i gel lak</option>
+                        <option>Šminkanje</option>
+                        <option>Njega lica</option>
+                        <option>Obrve i trepavice</option>
+                        <option>Masaža i spa</option>
+                        <option>Barber shop</option>
+                    </select>
+                    <input type="search" id="pretraga" name="pretraga" aria-label="Naziv salona ili tretmana" placeholder="Naziv salona ili tretmana">
+                    <button class="btn btn-primary" type="submit">Pretraži</button>
+                </form>
+            </div>
+
+            <div class="hero-art">
+                <img src="slike/glam.jpg" alt="Šminkanje u salonu">
+            </div>
+        </div>
+    </section>
+
+    <!-- GLAVNI SADRŽAJ (tri kolone iste visine) -->
+    <div class="container">
+
+        <!-- Lijevo (20%) - Popularne usluge -->
+        <div class="left">
+            <aside class="sidebar">
+                <h3>Popularne usluge</h3>
+                <ul class="service-list">
+                    <li><a href="tretmani.html#frizerski">Šišanje i feniranje</a></li>
+                    <li><a href="tretmani.html#frizerski">Farbanje i pramenovi</a></li>
+                    <li><a href="tretmani.html#frizerski">Ekstenzije kose</a></li>
+                    <li><a href="tretmani.html#nokti">Gel lak</a></li>
+                    <li><a href="tretmani.html#nokti">Nadogradnja noktiju</a></li>
+                    <li><a href="tretmani.html#spa">Relax masaža leđa</a></li>
+                    <li><a href="tretmani.html#sminkanje">Šminkanje za svečanosti</a></li>
+                    <li><a href="tretmani.html#lice">Dubinsko čišćenje lica</a></li>
+                    <li><a href="tretmani.html#trepavice">Lash lifting trepavica</a></li>
+                    <li><a href="tretmani.html#trepavice">Oblikovanje obrva</a></li>
+                    <li><a href="tretmani.html#barber">Muško šišanje i brada</a></li>
+                </ul>
+            </aside>
+        </div>
+
+        <!-- Sredina (60%) - Kategorije sa slikama -->
+        <div class="main">
+            <section class="main-content" aria-label="Kategorije salona">
+                <a class="card" href="saloni.html">
+                    <div class="card-img"><img src="slike/haircut.jpg" alt="Frizerka šiša kosu škarama"></div>
+                    <div class="card-text">
+                        <strong>Frizura i stilizovanje</strong>
+                        <small>Šišanje, feniranje i svečane frizure</small>
+                    </div>
+                </a>
+                <a class="card" href="saloni.html">
+                    <div class="card-img"><img src="slike/foil.jpg" alt="Pramenovi u folijama"></div>
+                    <div class="card-text">
+                        <strong>Farbanje i pramenovi</strong>
+                        <small>Balayage, folije i toniranje</small>
+                    </div>
+                </a>
+                <a class="card" href="saloni.html">
+                    <div class="card-img"><img src="slike/hairwash.jpg" alt="Pranje kose u frizerskom salonu"></div>
+                    <div class="card-text">
+                        <strong>Pranje i njega kose</strong>
+                        <small>Regenerativne maske i njega</small>
+                    </div>
+                </a>
+                <a class="card" href="saloni.html">
+                    <div class="card-img"><img src="slike/nails.jpg" alt="Manikir u salonu"></div>
+                    <div class="card-text">
+                        <strong>Manikir i gel lak</strong>
+                        <small>Gel lak, nadogradnja i nail art</small>
+                    </div>
+                </a>
+                <a class="card" href="saloni.html">
+                    <div class="card-img"><img src="slike/setting.jpg" alt="Šminkanje četkicom"></div>
+                    <div class="card-text">
+                        <strong>Šminkanje</strong>
+                        <small>Dnevno i večernje šminkanje</small>
+                    </div>
+                </a>
+                <a class="card" href="saloni.html">
+                    <div class="card-img"><img src="slike/glam.jpg" alt="Šminkanje sjenilom za oči"></div>
+                    <div class="card-text">
+                        <strong>Svečani glam look</strong>
+                        <small>Makeup za vjenčanja i proslave</small>
+                    </div>
+                </a>
+                <a class="card" href="saloni.html">
+                    <div class="card-img"><img src="slike/facial.jpg" alt="Čišćenje lica pjenom"></div>
+                    <div class="card-text">
+                        <strong>Njega lica</strong>
+                        <small>Dubinsko čišćenje i piling</small>
+                    </div>
+                </a>
+                <a class="card" href="saloni.html">
+                    <div class="card-img"><img src="slike/brow.jpg" alt="Oblikovanje obrva"></div>
+                    <div class="card-text">
+                        <strong>Obrve i trepavice</strong>
+                        <small>Oblikovanje i lash lifting</small>
+                    </div>
+                </a>
+                <a class="card" href="saloni.html">
+                    <div class="card-img"><img src="slike/barber-shop.jpg" alt="Brijanje u barber shopu"></div>
+                    <div class="card-text">
+                        <strong>Barber shop</strong>
+                        <small>Muško šišanje i njega brade</small>
+                    </div>
+                </a>
+            </section>
+        </div>
+
+        <!-- Desno (20%) - Info i reklama -->
+        <div class="right">
+            <aside class="sidebar">
+                <h3>Info</h3>
+                <div class="info-block">
+                    <h4>Besplatna rezervacija</h4>
+                    <p>Termin potvrđuje salon putem e-maila ili telefona.</p>
+                </div>
+                <div class="info-block">
+                    <h4>Otkazivanje</h4>
+                    <p>Moguće najkasnije 24 sata prije termina.</p>
+                </div>
+
+                <h3 class="sidebar-sub">Najbolje ocijenjeni</h3>
+                <ul class="top-list">
+                    <li><a href="saloni.html"><span>Nail Studio Amra</span><b>4,9</b></a></li>
+                    <li><a href="saloni.html"><span>Salon Lamija</span><b>4,8</b></a></li>
+                    <li><a href="saloni.html"><span>Barber Kralj</span><b>4,8</b></a></li>
+                </ul>
+
+                <div class="promo">
+                    <strong>-15% na prvi tretman</strong>
+                    <p>Vrijedi za nove korisnike u odabranim salonima.</p>
+                    <a class="btn btn-primary btn-block" href="rezervacija.html">Iskoristi popust</a>
+                </div>
+            </aside>
+        </div>
+
+    </div>
+
+    <!-- GALERIJA: INSPIRACIJA ZA NOKTE -->
+    <section class="section">
+        <div class="section-head">
+            <h2>Inspiracija za nokte</h2>
+            <p>Nekoliko ideja za tvoj sljedeći manikir. Odaberi dizajn i rezerviši termin u salonu.</p>
+        </div>
+        <div class="gallery">
+            <img src="slike/nail-art-1.jpg" alt="Nail art s cvjetovima i tačkicama" loading="lazy">
+            <img src="slike/nail-art-2.jpg" alt="Francuski manikir s crnim tačkicama" loading="lazy">
+            <img src="slike/nail-art-3.jpg" alt="Bordo i roze nokti s tačkicama" loading="lazy">
+            <img src="slike/nail-art-4.jpg" alt="Nokti s mašnicama" loading="lazy">
+        </div>
+        <p class="cta-row"><a class="btn btn-primary" href="saloni.html">Pronađi salon za manikir</a></p>
+    </section>
+
+    <!-- KAKO FUNKCIONIŠE -->
+    <section class="section">
+        <div class="section-head">
+            <h2>Rezervacija u tri koraka</h2>
+            <p>Bez registracije i bez čekanja na telefonu.</p>
+        </div>
+        <ol class="steps">
+            <li>
+                <h3>Pronađi salon</h3>
+                <p>Pregledaj salone u Tuzli po kategoriji, lokaciji i ocjenama drugih korisnika.</p>
+            </li>
+            <li>
+                <h3>Odaberi tretman</h3>
+                <p>Uporedi cijene i trajanje tretmana, pa izaberi uslugu koja ti odgovara.</p>
+            </li>
+            <li>
+                <h3>Rezerviši termin</h3>
+                <p>Izaberi datum i vrijeme, pošalji zahtjev i sačekaj potvrdu salona.</p>
+            </li>
+        </ol>
+    </section>
+
+    <!-- PODNOŽJE -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Beauty Booking Tuzla d.o.o.</h3>
+                <p>📍 Turalibegova 24, 75000 Tuzla, BiH</p>
+                <p>📞 +387 35 250 111</p>
+                <p>✉️ info@beautybooking.ba</p>
+            </div>
+            <div>
+                <h3>Stranice</h3>
+                <ul>
+                    <li><a href="pocetna.html">Početna</a></li>
+                    <li><a href="saloni.html">Saloni</a></li>
+                    <li><a href="tretmani.html">Tretmani</a></li>
+                    <li><a href="recenzije.html">Recenzije</a></li>
+                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Radno vrijeme</h3>
+                <p>Ponedjeljak – subota</p>
+                <p>08:00 – 20:00h</p>
+                <p>Nedjelja: zatvoreno</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2026 Beauty Booking Tuzla. Sva prava zadržana.
+        </div>
+    </footer>
+
+</body>
+</html>
