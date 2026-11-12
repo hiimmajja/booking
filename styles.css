@@ -1,141 +1,106 @@
 /* ==========================================================
-   Beauty Booking Tuzla – zajednički stilovi za sve stranice
-   Paleta: biserna pozadina, tamna aubergine za tekst,
-   prašnjava bobica (berry) kao glavni akcent, šampanj kao dodatak.
-   Bez bordera na karticama – razlike prave sjene, tonovi i razmaci.
+   Beauty Booking Tuzla – jedan stylesheet za sve stranice
    ========================================================== */
 
 :root {
-    --bg: #F7F3F4;          /* biserna pozadina stranice */
-    --bg-soft: #F1E5E8;     /* nježno tonirana pozadina (blush) */
-    --surface: #FFFFFF;     /* kartice */
-    --ink: #2B2024;         /* tamna aubergine za tekst */
-    --muted: #76666C;       /* sekundarni tekst */
-    --berry: #8C4A5C;       /* glavni akcent (dugmad, linkovi) */
-    --berry-dark: #6B3546;  /* hover / tamniji akcent */
-    --rose: #E9D3D7;        /* svijetli ružičasti ton */
-    --champagne: #C4A484;   /* šampanj – zvjezdice i detalji */
-    --champagne-dark: #A8845F;
-
-    --shadow-sm: 0 2px 14px rgba(43, 32, 36, .07);
-    --shadow-md: 0 12px 32px rgba(43, 32, 36, .12);
-
-    --font-display: "Cormorant Garamond", Georgia, serif;
-    --font-body: "Jost", system-ui, sans-serif;
-
+    --bg: #F7F3F4;         /* pozadina stranice */
+    --soft: #F1E5E8;       /* nježna roze pozadina */
+    --white: #FFFFFF;
+    --ink: #2B2024;        /* tamni tekst */
+    --muted: #76666C;      /* sekundarni tekst */
+    --berry: #8C4A5C;      /* glavni akcent */
+    --berry-dark: #6B3546;
+    --rose: #E9D3D7;
+    --gold: #C4A484;
+    --shadow: 0 2px 14px rgba(43, 32, 36, .08);
+    --shadow-hover: 0 12px 28px rgba(43, 32, 36, .16);
     --radius: 16px;
     --max: 1240px;
 }
 
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-}
+/* ---------- OSNOVA ---------- */
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-    font-family: var(--font-body);
-    font-size: 16px;
-    line-height: 1.65;
-    background-color: var(--bg);
+    font-family: "Jost", sans-serif;
+    line-height: 1.6;
+    background: var(--bg);
     color: var(--ink);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 }
 
-img {
-    display: block;
-    max-width: 100%;
-}
+img { display: block; max-width: 100%; }
+a { color: var(--berry); }
 
-a {
-    color: var(--berry);
-}
-
-h1, h2, h3 {
-    font-family: var(--font-display);
-    font-weight: 600;
-    line-height: 1.1;
-    color: var(--ink);
-}
-
-h1 { font-size: clamp(2.5rem, 5vw, 3.9rem); }
-h2 { font-size: clamp(1.9rem, 3.4vw, 2.5rem); }
+h1, h2, h3 { font-family: "Cormorant Garamond", serif; line-height: 1.1; }
+h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
+h2 { font-size: 2.2rem; }
 h3 { font-size: 1.5rem; }
 
-:focus-visible {
-    outline: 3px solid var(--champagne);
-    outline-offset: 3px;
+/* Polja svih formi imaju isti izgled */
+input:not([type=checkbox]), select, textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 12px;
+    background: var(--bg);
+    font: inherit;
+    color: var(--ink);
+}
+input:focus, select:focus, textarea:focus { outline: 3px solid var(--rose); }
+textarea { min-height: 120px; resize: vertical; }
+
+/* Sve "kartice" dijele pozadinu, zaobljenje i sjenu */
+.card, .salon-card, .price-block, .form-card, .info-card, .review-card,
+.review-summary, .steps li, .toolbar, .search {
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
 }
 
-/* ---------- DUGMAD ----------
-   Sva dugmad imaju ispunjenu pozadinu, zaobljene rubove, kursor "ruka",
-   hover (podizanje + promjena boje) i pritisak (active). */
-.btn {
+/* ---------- DUGMAD I HOVER ANIMACIJE ---------- */
+.btn, .icon-btn, .menu-toggle {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 12px 26px;
     border: none;
-    border-radius: 999px;
-    font-family: var(--font-body);
-    font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.2;
-    text-decoration: none;
     cursor: pointer;
-    transition: background-color .2s ease, color .2s ease,
-                transform .2s ease, box-shadow .2s ease;
+    font: inherit;
+    font-weight: 500;
+    text-decoration: none;
 }
 
-.btn-primary {
-    background: var(--berry);
-    color: #fff;
-    box-shadow: 0 6px 16px rgba(140, 74, 92, .30);
+.btn { padding: 12px 26px; border-radius: 999px; }
+.btn-primary { background: var(--berry); color: var(--white); }
+.btn-soft { background: var(--rose); color: var(--berry-dark); }
+.btn-block { width: 100%; }
+.btn-primary:hover { background: var(--berry-dark); }
+.btn-soft:hover { background: var(--berry); color: var(--white); }
+
+/* Zajednička animacija: sve što ima hover glatko se mijenja ... */
+.btn, .icon-btn, .menu-toggle, nav a, .service-list a, .top-list a,
+.chips a, .card, .salon-card, .gallery img, .card-img img {
+    transition: .25s;
 }
 
-.btn-primary:hover {
-    background: var(--berry-dark);
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(107, 53, 70, .35);
+/* ... a ove stvari se pri prelasku mišem podignu */
+.btn:hover, .icon-btn:hover, .menu-toggle:hover, .card:hover,
+.salon-card:hover, .chips a:hover, .gallery img:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
 }
 
-.btn-soft {
-    background: var(--rose);
-    color: var(--berry-dark);
-}
-
-.btn-soft:hover {
-    background: var(--berry);
-    color: #fff;
-    transform: translateY(-3px);
-    box-shadow: 0 10px 22px rgba(140, 74, 92, .28);
-}
-
-.btn:active {
-    transform: translateY(0);
-    box-shadow: 0 2px 6px rgba(43, 32, 36, .2);
-}
-
-.btn-block {
-    width: 100%;
-}
+.card:hover img { transform: scale(1.07); }
 
 /* ---------- ZAGLAVLJE ---------- */
 .site-header {
     position: sticky;
     top: 0;
-    z-index: 20;
-    background: rgba(255, 255, 255, .92);
-    backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-sm);
+    z-index: 10;
+    background: var(--white);
+    box-shadow: var(--shadow);
 }
 
 .header-inner {
@@ -145,69 +110,45 @@ h3 { font-size: 1.5rem; }
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 24px;
+    gap: 20px;
 }
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    text-decoration: none;
-    flex-shrink: 0;
-}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+.logo-title { font: 700 1.9rem "Cormorant Garamond", serif; color: var(--ink); }
 
-.logo {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+nav ul { display: flex; gap: 4px; list-style: none; }
 
-.logo-title {
-    font-family: var(--font-display);
-    font-size: 1.9rem;
-    font-weight: 700;
-    color: var(--ink);
-    letter-spacing: .3px;
-}
-
-.site-header nav ul {
-    display: flex;
-    list-style: none;
-    gap: 4px;
-}
-
-.site-header nav a {
+nav a {
     display: block;
     padding: 9px 18px;
     border-radius: 999px;
     color: var(--ink);
     text-decoration: none;
     font-weight: 500;
-    transition: background-color .2s, color .2s;
 }
+nav a:hover { background: var(--soft); color: var(--berry); }
+nav a.active { background: var(--berry); color: var(--white); }
 
-.site-header nav a:hover {
-    background: var(--bg-soft);
-    color: var(--berry);
-}
+.header-actions { display: flex; align-items: center; gap: 12px; }
 
-.site-header nav a.active {
-    background: var(--berry);
-    color: #fff;
+.icon-btn, .menu-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--rose);
+    color: var(--berry-dark);
+    font-size: 1.3rem;
 }
+.icon-btn svg { width: 22px; height: 22px; }
+.icon-btn:hover, .menu-toggle:hover, .icon-btn.active { background: var(--berry); color: var(--white); }
 
-.header-cta {
-    padding: 10px 22px;
-    font-size: .95rem;
-    flex-shrink: 0;
-}
+/* Hamburger i skriveni checkbox: vidljivi samo na mobitelu (vidi media query) */
+.menu-toggle { display: none; }
+.menu-checkbox { position: absolute; opacity: 0; }
 
-/* ---------- HERO (početna) ---------- */
-.hero {
-    background: var(--bg-soft);
-    padding: 56px 20px;
-}
+/* ---------- HERO ---------- */
+.hero { background: var(--soft); padding: 56px 20px; }
 
 .hero-inner {
     max-width: var(--max);
@@ -218,115 +159,55 @@ h3 { font-size: 1.5rem; }
     align-items: center;
 }
 
-.hero-text p {
-    margin: 18px 0 28px;
-    max-width: 52ch;
-    color: var(--muted);
-    font-size: 1.1rem;
-}
+.hero-text p { margin: 18px 0 28px; max-width: 52ch; color: var(--muted); font-size: 1.1rem; }
 
-.search {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    background: var(--surface);
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: var(--shadow-md);
-}
+.search { display: flex; flex-wrap: wrap; gap: 10px; padding: 10px; }
+.search select, .search input { flex: 1 1 160px; width: auto; }
 
-.search select,
-.search input {
-    flex: 1 1 160px;
-    min-width: 0;
-    padding: 13px 16px;
-    border: none;
-    border-radius: 12px;
-    background: var(--bg);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--ink);
-}
-
-.search select:focus,
-.search input:focus {
-    outline: 3px solid var(--rose);
-}
-
-/* Slika u obliku luka, kao ogledalo u salonu */
+/* Slika u obliku luka */
 .hero-art {
     justify-self: center;
-    width: min(100%, 360px);
+    width: min(100%, 340px);
     aspect-ratio: 4 / 5;
     border-radius: 999px 999px 28px 28px;
     overflow: hidden;
-    box-shadow: 18px 18px 0 var(--rose), var(--shadow-md);
+    box-shadow: 16px 16px 0 var(--rose);
 }
+.hero-art img { width: 100%; height: 100%; object-fit: cover; }
 
-.hero-art img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-/* ---------- GLAVNI SADRŽAJ: 3 kolone iste visine ----------
-   Grid po defaultu rasteže sve tri kolone na visinu najviše (align-items: stretch),
-   a unutar kolona flex-grow popunjava preostali prostor. */
+/* ---------- POČETNA: TRI KOLONE ISTE VISINE ---------- */
 .container {
     width: 100%;
     max-width: var(--max);
     margin: 0 auto;
     padding: 48px 20px;
     display: grid;
-    grid-template-columns: 1fr 3fr 1fr;
-    gap: 28px;
-    align-items: stretch;
+    grid-template-columns: 1fr 3fr 1fr;   /* 20% / 60% / 20% */
+    gap: 28px;                            /* grid rasteže kolone na istu visinu */
 }
 
-.left,
-.main,
-.right {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-}
+/* svaka kolona je flex, pa unutrašnji dio sa flex: 1 popuni cijelu visinu */
+.left, .main, .right { display: flex; flex-direction: column; min-width: 0; }
 
 .sidebar {
     flex: 1;
     display: flex;
     flex-direction: column;
-    background: var(--bg-soft);
     padding: 24px 20px;
     border-radius: var(--radius);
+    background: var(--soft);
 }
+.sidebar h3 { margin-bottom: 12px; color: var(--berry-dark); }
+.sidebar p { color: var(--muted); font-size: .95rem; }
 
-.sidebar h3 {
-    color: var(--berry-dark);
-    margin-bottom: 14px;
-}
+.service-list, .top-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+.service-list { flex: 1; }
+.service-list li { flex: 1; display: flex; }
 
-.sidebar p {
-    font-size: .95rem;
-    line-height: 1.55;
-    color: var(--muted);
-}
-
-.service-list {
-    flex: 1;
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.service-list li {
-    flex: 1;
-    display: flex;
-}
-
-.service-list a {
+.service-list a, .top-list a {
     display: flex;
     align-items: center;
+    justify-content: space-between;
     width: 100%;
     padding: 9px 14px;
     border-radius: 10px;
@@ -334,16 +215,19 @@ h3 { font-size: 1.5rem; }
     color: var(--ink);
     text-decoration: none;
     font-size: .95rem;
-    transition: background-color .2s, color .2s, transform .2s;
 }
+.service-list a:hover, .top-list a:hover { background: var(--berry); color: var(--white); }
+.service-list a:hover { transform: translateX(4px); }
 
-.service-list a:hover {
-    background: var(--berry);
-    color: #fff;
-    transform: translateX(4px);
-}
+.sidebar-sub { margin: 20px 0 10px; font-size: 1.3rem; }
+.info-block { margin-bottom: 12px; }
+.info-block h4 { font-weight: 500; }
 
-/* Mreža kartica kategorija – 2 reda koja popunjavaju cijelu visinu */
+.promo { margin-top: auto; padding: 20px; border-radius: 14px; background: var(--white); }
+.promo strong { display: block; margin-bottom: 8px; font: 700 1.8rem/1.05 "Cormorant Garamond", serif; color: var(--berry); }
+.promo p { margin-bottom: 16px; }
+
+/* mreža kartica kategorija: 3 reda koja popunjavaju visinu kolone */
 .main-content {
     flex: 1;
     display: grid;
@@ -352,192 +236,32 @@ h3 { font-size: 1.5rem; }
     gap: 16px;
 }
 
-.card {
-    display: flex;
-    flex-direction: column;
-    background: var(--surface);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    text-decoration: none;
-    color: var(--ink);
-    transition: box-shadow .25s, transform .25s;
-}
+.card { display: flex; flex-direction: column; overflow: hidden; text-decoration: none; color: var(--ink); }
+.card-img { position: relative; flex: 1; min-height: 180px; overflow: hidden; }
+.card-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.card-text { padding: 14px 16px; }
+.card-text strong { display: block; font: 700 1.3rem/1.15 "Cormorant Garamond", serif; }
+.card-text small { color: var(--muted); }
 
-.card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-}
+/* ---------- SEKCIJE I MREŽE ---------- */
+.section { width: 100%; max-width: var(--max); margin: 0 auto; padding: 32px 20px 64px; }
+.section-head { margin-bottom: 28px; }
+.section-head p, .page-head p { margin-top: 8px; max-width: 60ch; color: var(--muted); }
+.cta-row { margin-top: 28px; }
+.page-head { padding: 52px 20px; background: var(--soft); }
+.page-head > div { max-width: var(--max); margin: 0 auto; }
 
-.card-img {
-    position: relative;
-    flex: 1;
-    min-height: 190px;
-    overflow: hidden;
-}
-
-.card-img img {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .5s;
-}
-
-.card:hover .card-img img {
-    transform: scale(1.06);
-}
-
-.card-text {
-    padding: 14px 16px 16px;
-}
-
-.card-text strong {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 1.35rem;
-    font-weight: 700;
-    line-height: 1.15;
-}
-
-.card-text small {
-    display: block;
-    margin-top: 3px;
-    color: var(--muted);
-    font-size: .85rem;
-    line-height: 1.4;
-}
-
-/* Reklama (desna kolona) – spuštena na dno kolone */
-.promo {
-    margin-top: auto;
-    padding: 20px;
-    border-radius: 14px;
-    background: var(--surface);
-    box-shadow: var(--shadow-sm);
-}
-
-.promo strong {
-    display: block;
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    font-weight: 700;
-    line-height: 1.05;
-    color: var(--berry);
-    margin-bottom: 8px;
-}
-
-.promo p {
-    margin-bottom: 16px;
-}
-
-.info-block + .info-block {
-    margin-top: 16px;
-}
-
-.info-block h4 {
-    font-size: .95rem;
-    font-weight: 500;
-    color: var(--ink);
-}
-
-/* Mini lista najbolje ocijenjenih salona (desna kolona) */
-.sidebar-sub {
-    margin: 22px 0 10px;
-    font-size: 1.3rem;
-}
-
-.top-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    margin-bottom: 20px;
-}
-
-.top-list a {
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    padding: 9px 14px;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, .6);
-    color: var(--ink);
-    text-decoration: none;
-    font-size: .95rem;
-    transition: background-color .2s, color .2s;
-}
-
-.top-list a:hover {
-    background: var(--berry);
-    color: #fff;
-}
-
-.top-list b {
-    font-weight: 500;
-}
-
-/* Galerija (inspiracija za nokte) */
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 18px;
-}
-
-.gallery img {
-    width: 100%;
-    aspect-ratio: 4 / 5;
-    object-fit: cover;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    transition: transform .3s, box-shadow .3s;
-}
-
-.gallery img:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-}
-
-.gallery + .cta-row {
-    margin-top: 28px;
-}
-
-/* ---------- SEKCIJE ---------- */
-.section {
-    width: 100%;
-    max-width: var(--max);
-    margin: 0 auto;
-    padding: 32px 20px 64px;
-}
-
-.section-head {
-    margin-bottom: 28px;
-}
-
-.section-head p {
-    margin-top: 8px;
-    color: var(--muted);
-    max-width: 60ch;
-}
-
-.steps {
+/* sve mreže s tri kolone */
+.salon-grid, .review-grid, .steps, .info-cards, .footer-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    list-style: none;
-    counter-reset: korak;
+    gap: 24px;
 }
+.price-grid, .form-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 
-.steps li {
-    counter-increment: korak;
-    background: var(--surface);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    padding: 28px;
-}
-
-.steps li::before {
+.steps { list-style: none; counter-reset: korak; }
+.steps li { counter-increment: korak; padding: 28px; }
+.steps li::before {              /* automatski broj koraka */
     content: counter(korak);
     display: grid;
     place-items: center;
@@ -545,651 +269,110 @@ h3 { font-size: 1.5rem; }
     height: 44px;
     margin-bottom: 14px;
     border-radius: 50%;
-    background: var(--bg-soft);
+    background: var(--soft);
     color: var(--berry);
-    font-family: var(--font-display);
-    font-size: 1.5rem;
-    font-weight: 700;
-}
-
-.steps h3 {
-    margin-bottom: 6px;
-}
-
-.steps p {
-    color: var(--muted);
-}
-
-/* ---------- NASLOV PODSTRANICE ---------- */
-.page-head {
-    background: var(--bg-soft);
-    padding: 52px 20px;
-}
-
-.page-head-inner {
-    max-width: var(--max);
-    margin: 0 auto;
-}
-
-.page-head p {
-    margin-top: 12px;
-    max-width: 60ch;
-    color: var(--muted);
-    font-size: 1.05rem;
-}
-
-/* ---------- SALONI ---------- */
-.toolbar {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin-bottom: 32px;
-    padding: 18px;
-    background: var(--surface);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-}
-
-.toolbar label {
-    display: flex;
-    flex-direction: column;
-    flex: 1 1 180px;
-    font-size: .85rem;
-    color: var(--muted);
-}
-
-.toolbar select,
-.toolbar input {
-    margin-top: 5px;
-    padding: 12px 14px;
-    border: none;
-    border-radius: 10px;
-    background: var(--bg);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--ink);
-}
-
-.toolbar select:focus,
-.toolbar input:focus {
-    outline: 3px solid var(--rose);
-}
-
-.toolbar .btn {
-    align-self: flex-end;
-}
-
-.salon-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-}
-
-.salon-card {
-    display: flex;
-    flex-direction: column;
-    background: var(--surface);
-    border-radius: var(--radius);
-    overflow: hidden;
-    box-shadow: var(--shadow-sm);
-    transition: box-shadow .25s, transform .25s;
-}
-
-.salon-card:hover {
-    transform: translateY(-4px);
-    box-shadow: var(--shadow-md);
-}
-
-.salon-card img {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    object-fit: cover;
-}
-
-.salon-body {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    flex: 1;
-    padding: 20px;
-}
-
-.salon-body p {
-    font-size: .95rem;
-    color: var(--muted);
-}
-
-.tag {
-    align-self: flex-start;
-    padding: 3px 14px;
-    border-radius: 999px;
-    background: var(--bg-soft);
-    color: var(--berry-dark);
-    font-size: .82rem;
-    font-weight: 500;
-}
-
-.salon-body .rating {
-    color: var(--champagne-dark);
-    letter-spacing: 1px;
-}
-
-.rating small {
-    color: var(--ink);
-    letter-spacing: 0;
-    font-size: .9rem;
-}
-
-.salon-actions {
-    display: flex;
-    gap: 10px;
-    margin-top: auto;
-    padding-top: 14px;
-}
-
-.salon-actions .btn {
-    flex: 1;
-    padding: 10px 12px;
-    font-size: .92rem;
-}
-
-/* ---------- TRETMANI ---------- */
-.chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    list-style: none;
-    margin-bottom: 32px;
-}
-
-.chips a {
-    display: block;
-    padding: 9px 20px;
-    border-radius: 999px;
-    background: var(--surface);
-    box-shadow: var(--shadow-sm);
-    color: var(--ink);
-    text-decoration: none;
-    font-size: .95rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: background-color .2s, color .2s, transform .2s;
-}
-
-.chips a:hover {
-    background: var(--berry);
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-.price-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 24px;
-}
-
-.price-block {
-    background: var(--surface);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    padding: 28px;
-    scroll-margin-top: 100px;
-}
-
-.price-block h2 {
-    font-size: 2rem;
-    margin-bottom: 18px;
-}
-
-.price-block h2::after {
-    content: "";
-    display: block;
-    width: 44px;
-    height: 3px;
-    margin-top: 10px;
-    border-radius: 3px;
-    background: var(--champagne);
-}
-
-.price-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.price-list li {
-    display: grid;
-    grid-template-columns: 1fr auto auto;
-    gap: 16px;
-    align-items: center;
-    padding: 12px 16px;
-    border-radius: 10px;
-    background: var(--bg);
-}
-
-.price-list .t-time {
-    color: var(--muted);
-    font-size: .9rem;
-}
-
-.price-list .t-price {
-    min-width: 64px;
-    text-align: right;
-    font-weight: 500;
-    color: var(--berry-dark);
-}
-
-.price-note {
-    margin-top: 32px;
-    padding: 18px 22px;
-    background: var(--bg-soft);
-    border-radius: var(--radius);
-    color: var(--ink);
-}
-
-.cta-row {
-    margin-top: 28px;
-}
-
-/* ---------- FORME (rezervacija, kontakt, recenzije) ---------- */
-.form-layout {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 28px;
-    align-items: start;
-}
-
-.form-card {
-    background: var(--surface);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    padding: 32px;
-}
-
-.form-card fieldset {
-    border: none;
-    margin-bottom: 26px;
-}
-
-.form-card legend {
-    font-family: var(--font-display);
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 16px;
-}
-
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 18px;
-}
-
-.field {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-}
-
-.field.full {
-    grid-column: 1 / -1;
-}
-
-.field label {
-    font-size: .9rem;
-    color: var(--muted);
-}
-
-.field input,
-.field select,
-.field textarea {
-    padding: 13px 16px;
-    border: none;
-    border-radius: 12px;
-    background: var(--bg);
-    font-family: var(--font-body);
-    font-size: 1rem;
-    color: var(--ink);
-    transition: background-color .2s, box-shadow .2s;
-}
-
-.field textarea {
-    resize: vertical;
-    min-height: 120px;
-}
-
-.field input:focus,
-.field select:focus,
-.field textarea:focus {
-    outline: none;
-    background: var(--surface);
-    box-shadow: 0 0 0 3px var(--rose), 0 0 0 5px var(--berry);
-}
-
-.check {
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    margin-bottom: 22px;
-    font-size: .92rem;
-    color: var(--muted);
-}
-
-.check input {
-    margin-top: 5px;
-    accent-color: var(--berry);
-}
-
-.side-note {
-    background: var(--bg-soft);
-    border-radius: var(--radius);
-    padding: 26px;
-}
-
-.side-note h3 {
-    color: var(--berry-dark);
-    margin-bottom: 12px;
-}
-
-.side-note p {
-    color: var(--muted);
-}
-
-.side-note ul {
-    padding-left: 18px;
-    color: var(--muted);
-}
-
-.side-note li {
-    margin-bottom: 8px;
-}
-
-/* ---------- RECENZIJE ---------- */
-.review-summary {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-    flex-wrap: wrap;
-    margin-bottom: 32px;
-    padding: 28px 32px;
-    background: var(--surface);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-}
-
-.review-score {
-    font-family: var(--font-display);
-    font-size: 4.5rem;
-    font-weight: 700;
-    line-height: 1;
-    color: var(--berry);
-}
-
-.review-summary .rating {
-    color: var(--champagne-dark);
-    font-size: 1.4rem;
-    letter-spacing: 2px;
-}
-
-.review-summary p {
-    color: var(--muted);
-}
-
-.review-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 48px;
-}
-
-.review-card {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-    padding: 26px;
-    background: var(--surface);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-}
-
-.review-card .rating {
-    color: var(--champagne-dark);
-    letter-spacing: 2px;
-}
-
-.review-card blockquote {
-    flex: 1;
-    color: var(--ink);
-}
-
-.review-author {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-
-.avatar {
-    display: grid;
-    place-items: center;
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-    background: var(--berry);
-    color: #fff;
-    font-family: var(--font-display);
-    font-size: 1.3rem;
-    font-weight: 700;
-}
-
-.review-author strong {
-    display: block;
-    line-height: 1.2;
-}
-
-.review-author small {
-    color: var(--muted);
-}
-
-/* ---------- KONTAKT ---------- */
-.info-cards {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 22px;
-    margin-bottom: 32px;
-}
-
-.info-card {
-    background: var(--surface);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    padding: 26px;
-}
-
-.info-card h3 {
-    margin-bottom: 8px;
-    color: var(--berry-dark);
-}
-
-.info-card p {
-    color: var(--muted);
-}
-
-.map {
-    margin-top: 32px;
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
-}
-
-.map iframe {
-    display: block;
-    width: 100%;
-    height: 360px;
-    border: 0;
-}
+    font: 700 1.5rem "Cormorant Garamond", serif;
+}
+.steps p, .side-note p, .info-card p { color: var(--muted); }
+
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+.gallery img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--radius); }
+
+/* ---------- SALONI, TRETMANI, RECENZIJE ---------- */
+.toolbar { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 32px; padding: 18px; }
+.toolbar label { flex: 1 1 180px; font-size: .85rem; color: var(--muted); }
+.toolbar .btn { align-self: flex-end; }
+
+.salon-card { display: flex; flex-direction: column; overflow: hidden; }
+.salon-card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+.salon-body { display: flex; flex: 1; flex-direction: column; gap: 6px; padding: 20px; }
+.salon-body p { font-size: .95rem; color: var(--muted); }
+.salon-actions { display: flex; gap: 10px; margin-top: auto; padding-top: 14px; }
+.salon-actions .btn { flex: 1; padding: 10px; }
+
+.tag { align-self: flex-start; padding: 3px 14px; border-radius: 999px; background: var(--soft); color: var(--berry-dark); font-size: .82rem; }
+.rating { color: #A8845F; letter-spacing: 1px; }
+.rating small { color: var(--ink); letter-spacing: 0; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 32px; list-style: none; }
+.chips a { display: block; padding: 9px 20px; border-radius: 999px; background: var(--white); box-shadow: var(--shadow); color: var(--ink); text-decoration: none; }
+.chips a:hover { background: var(--berry); color: var(--white); }
+
+.price-block { padding: 28px; scroll-margin-top: 100px; }
+.price-block h2 { margin-bottom: 16px; font-size: 2rem; }
+.price-list { display: flex; flex-direction: column; gap: 8px; list-style: none; }
+.price-list li { display: grid; grid-template-columns: 1fr auto auto; gap: 16px; padding: 12px 16px; border-radius: 10px; background: var(--bg); }
+.t-time { color: var(--muted); font-size: .9rem; }
+.t-price { min-width: 64px; text-align: right; font-weight: 500; color: var(--berry-dark); }
+.price-note { margin-top: 32px; padding: 18px 22px; border-radius: var(--radius); background: var(--soft); }
+
+.review-summary { display: flex; align-items: center; gap: 28px; margin-bottom: 32px; padding: 28px 32px; }
+.review-score { font: 700 4.5rem/1 "Cormorant Garamond", serif; color: var(--berry); }
+.review-card { display: flex; flex-direction: column; gap: 12px; padding: 26px; }
+.review-card blockquote { flex: 1; }
+.review-grid { margin-bottom: 48px; }
+.review-author { display: flex; align-items: center; gap: 12px; }
+.review-author small { display: block; color: var(--muted); }
+.avatar { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: var(--berry); color: var(--white); font: 700 1.3rem "Cormorant Garamond", serif; }
+
+/* ---------- FORME I KONTAKT ---------- */
+.form-layout { display: grid; grid-template-columns: 2fr 1fr; gap: 28px; align-items: start; }
+.form-layout.equal { grid-template-columns: 1fr 1fr; }
+.form-card { padding: 32px; }
+.form-card fieldset { margin-bottom: 24px; border: none; }
+.form-card legend { margin-bottom: 16px; font: 600 1.8rem "Cormorant Garamond", serif; }
+.form-grid { gap: 18px; }
+.field { display: flex; flex-direction: column; gap: 6px; }
+.field.full { grid-column: 1 / -1; }
+.field label { font-size: .9rem; color: var(--muted); }
+.check { display: flex; gap: 10px; margin-bottom: 22px; font-size: .92rem; color: var(--muted); }
+.form-link { margin-top: 16px; text-align: center; }
+
+.side-note { padding: 26px; border-radius: var(--radius); background: var(--soft); }
+.side-note h3, .info-card h3 { margin-bottom: 10px; color: var(--berry-dark); }
+.side-note ul { padding-left: 18px; color: var(--muted); }
+
+.info-card { padding: 26px; }
+.info-cards { margin-bottom: 32px; }
+.map { margin-top: 32px; border-radius: var(--radius); box-shadow: var(--shadow); overflow: hidden; }
+.map iframe { display: block; width: 100%; height: 360px; border: 0; }
 
 /* ---------- PODNOŽJE ---------- */
-footer {
-    margin-top: auto;
-    background: var(--ink);
-    color: #E4D8DC;
-    padding: 48px 20px 24px;
-    font-size: .95rem;
-}
-
-.footer-grid {
-    max-width: var(--max);
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr;
-    gap: 32px;
-}
-
-.footer-grid h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: var(--champagne);
-}
-
-.footer-grid p,
-.footer-grid li {
-    margin-bottom: 5px;
-}
-
-.footer-grid ul {
-    list-style: none;
-}
-
-.footer-grid a {
-    color: #E4D8DC;
-    text-decoration: none;
-    transition: color .2s;
-}
-
-.footer-grid a:hover {
-    color: #fff;
-    text-decoration: underline;
-}
-
-.footer-copy {
-    max-width: var(--max);
-    margin: 32px auto 0;
-    text-align: center;
-    font-size: .82rem;
-    color: #A8979D;
-}
+footer { margin-top: auto; padding: 48px 20px 24px; background: var(--ink); color: #E4D8DC; }
+.footer-grid { max-width: var(--max); margin: 0 auto; grid-template-columns: 1.5fr 1fr 1fr; }
+.footer-grid h3 { margin-bottom: 10px; color: var(--gold); }
+.footer-grid ul { list-style: none; }
+.footer-grid a { color: #E4D8DC; text-decoration: none; }
+.footer-grid a:hover { color: var(--white); text-decoration: underline; }
+.footer-copy { margin-top: 32px; text-align: center; font-size: .85rem; color: #A8979D; }
 
 /* ---------- RESPONZIVNOST ---------- */
-@media screen and (max-width: 1000px) {
-    .main-content {
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(5, 1fr);
-    }
 
-    .salon-grid,
-    .review-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* Tablet i mobitel: meni postaje dropdown, kolone se slažu jedna ispod druge */
+@media (max-width: 900px) {
+    .menu-toggle { display: inline-flex; }
+    .header-cta { display: none; }
 
-    .gallery {
-        grid-template-columns: repeat(2, 1fr);
-    }
+    /* checkbox trik: kad je checkbox označen (:checked), meni se prikaže */
+    nav { display: none; position: absolute; top: 100%; left: 0; right: 0; padding: 8px 20px 18px; background: var(--white); box-shadow: var(--shadow-hover); }
+    nav ul { flex-direction: column; }
+    .menu-checkbox:checked ~ nav { display: block; }
 
-    .price-grid {
-        grid-template-columns: 1fr;
-    }
-}
+    .hero-inner, .container, .form-layout, .form-layout.equal, .price-grid,
+    .steps, .info-cards, .footer-grid { grid-template-columns: 1fr; }
 
-@media screen and (max-width: 900px) {
-    .site-header {
-        position: static;
-    }
+    .main-content { grid-template-columns: repeat(2, 1fr); grid-template-rows: none; }
+    .salon-grid, .review-grid, .gallery { grid-template-columns: repeat(2, 1fr); }
 
-    .header-inner {
-        flex-wrap: wrap;
-        gap: 12px;
-    }
-
-    .site-header nav {
-        order: 3;
-        width: 100%;
-        overflow-x: auto;
-    }
-
-    .site-header nav ul {
-        width: max-content;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .hero-inner,
-    .form-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .hero-art {
-        order: -1;
-        width: min(70%, 260px);
-        box-shadow: 12px 12px 0 var(--rose), var(--shadow-md);
-    }
-
-    /* Na mobitelu se kolone slažu jedna ispod druge (visine su po sadržaju) */
-    .container {
-        grid-template-columns: 1fr;
-    }
-
+    .hero-art { order: -1; width: 240px; }
     .main { order: 1; }
     .left { order: 2; }
     .right { order: 3; }
-
-    .main-content {
-        grid-template-rows: none;
-    }
-
-    .card-img {
-        min-height: 170px;
-    }
-
-    .steps,
-    .info-cards,
-    .footer-grid {
-        grid-template-columns: 1fr;
-    }
 }
 
-@media screen and (max-width: 520px) {
-    .main-content,
-    .salon-grid,
-    .review-grid,
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery {
-        gap: 10px;
-    }
-
-    .header-cta {
-        display: none;
-    }
-
-    .form-card {
-        padding: 22px;
-    }
-
-    .price-list li {
-        grid-template-columns: 1fr auto;
-    }
-
-    .price-list .t-time {
-        grid-column: 1;
-        grid-row: 2;
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    * {
-        transition: none !important;
-        scroll-behavior: auto !important;
-    }
+/* Mali mobiteli: sve u jednu kolonu */
+@media (max-width: 520px) {
+    .main-content, .salon-grid, .review-grid, .form-grid { grid-template-columns: 1fr; }
+    .logo-title { font-size: 1.5rem; }
+    .price-list li { grid-template-columns: 1fr auto; }
 }
