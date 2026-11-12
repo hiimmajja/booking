@@ -20,7 +20,11 @@
                 <img class="logo" src="slike/logo.png" alt="Logo Beauty Booking">
                 <span class="logo-title">Beauty Booking</span>
             </a>
-            <nav aria-label="Glavna navigacija">
+
+            <!-- Meni za mobitel bez JavaScripta: skriveni checkbox + label (hamburger) + CSS selektor :checked -->
+            <input type="checkbox" id="menu-checkbox" class="menu-checkbox" aria-label="Otvori ili zatvori meni">
+
+            <nav class="topnav" aria-label="Glavna navigacija">
                 <ul>
                     <li><a href="index.html">Početna</a></li>
                     <li><a href="saloni.html">Saloni</a></li>
@@ -30,7 +34,19 @@
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
             </nav>
-            <a class="btn btn-primary header-cta" href="rezervacija.html">Rezerviši termin</a>
+
+            <div class="header-actions">
+                <a class="btn btn-primary header-cta" href="rezervacija.html">Rezerviši termin</a>
+                <a class="icon-btn" href="prijava.html" aria-label="Prijava" title="Prijava">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"></path>
+                    </svg>
+                </a>
+                <label class="menu-toggle" for="menu-checkbox" title="Meni">
+                    ☰
+                </label>
+            </div>
         </div>
     </header>
 
@@ -196,6 +212,7 @@
                     <li><a href="recenzije.html">Recenzije</a></li>
                     <li><a href="rezervacija.html">Rezervacija</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="prijava.html">Prijava</a></li>
                 </ul>
             </div>
             <div>
