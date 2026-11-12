@@ -16,11 +16,15 @@
     <!-- ZAGLAVLJE -->
     <header class="site-header">
         <div class="header-inner">
-            <a class="brand" href="pocetna.html">
+            <a class="brand" href="index.html">
                 <img class="logo" src="slike/logo.png" alt="Logo Beauty Booking">
                 <span class="logo-title">Beauty Booking</span>
             </a>
-            <nav aria-label="Glavna navigacija">
+
+            <!-- Meni za mobitel bez JavaScripta: skriveni checkbox + label (hamburger) + CSS selektor :checked -->
+            <input type="checkbox" id="menu-checkbox" class="menu-checkbox" aria-label="Otvori ili zatvori meni">
+
+            <nav class="topnav" aria-label="Glavna navigacija">
                 <ul>
                     <li><a class="active" href="index.html" aria-current="page">Početna</a></li>
                     <li><a href="saloni.html">Saloni</a></li>
@@ -30,7 +34,19 @@
                     <li><a href="kontakt.html">Kontakt</a></li>
                 </ul>
             </nav>
-            <a class="btn btn-primary header-cta" href="rezervacija.html">Rezerviši termin</a>
+
+            <div class="header-actions">
+                <a class="btn btn-primary header-cta" href="rezervacija.html">Rezerviši termin</a>
+                <a class="icon-btn" href="prijava.html" aria-label="Prijava" title="Prijava">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"></path>
+                    </svg>
+                </a>
+                <label class="menu-toggle" for="menu-checkbox" title="Meni">
+                    <span></span><span></span><span></span>
+                </label>
+            </div>
         </div>
     </header>
 
@@ -99,7 +115,7 @@
                     </div>
                 </a>
                 <a class="card" href="saloni.html">
-                    <div class="card-img"><img src="slike/foil.jpg" alt="Pramenovi u folijama"></div>
+                    <div class="card-img"><img src="slike/Foil.jpg" alt="Pramenovi u folijama"></div>
                     <div class="card-text">
                         <strong>Farbanje i pramenovi</strong>
                         <small>Balayage, folije i toniranje</small>
@@ -113,7 +129,7 @@
                     </div>
                 </a>
                 <a class="card" href="saloni.html">
-                    <div class="card-img"><img src="slike/nails.jpg" alt="Manikir u salonu"></div>
+                    <div class="card-img"><img src="slike/Nails.jpg" alt="Manikir u salonu"></div>
                     <div class="card-text">
                         <strong>Manikir i gel lak</strong>
                         <small>Gel lak, nadogradnja i nail art</small>
@@ -148,7 +164,7 @@
                     </div>
                 </a>
                 <a class="card" href="saloni.html">
-                    <div class="card-img"><img src="slike/barber-shop.jpg" alt="Brijanje u barber shopu"></div>
+                    <div class="card-img"><img src="slike/barber.jpg" alt="Brijanje u barber shopu"></div>
                     <div class="card-text">
                         <strong>Barber shop</strong>
                         <small>Muško šišanje i njega brade</small>
@@ -194,10 +210,10 @@
             <p>Nekoliko ideja za tvoj sljedeći manikir. Odaberi dizajn i rezerviši termin u salonu.</p>
         </div>
         <div class="gallery">
-            <img src="slike/nail-art-1.jpg" alt="Nail art s cvjetovima i tačkicama" loading="lazy">
-            <img src="slike/nail-art-2.jpg" alt="Francuski manikir s crnim tačkicama" loading="lazy">
-            <img src="slike/nail-art-3.jpg" alt="Bordo i roze nokti s tačkicama" loading="lazy">
-            <img src="slike/nail-art-4.jpg" alt="Nokti s mašnicama" loading="lazy">
+            <img src="slike/images (1).jpg" alt="Nail art s cvjetovima i tačkicama" loading="lazy">
+            <img src="slike/images (2).jpg" alt="Francuski manikir s crnim tačkicama" loading="lazy">
+            <img src="slike/images (3).jpg" alt="Bordo i roze nokti s tačkicama" loading="lazy">
+            <img src="slike/images.jpg" alt="Nokti s mašnicama" loading="lazy">
         </div>
         <p class="cta-row"><a class="btn btn-primary" href="saloni.html">Pronađi salon za manikir</a></p>
     </section>
@@ -242,6 +258,7 @@
                     <li><a href="recenzije.html">Recenzije</a></li>
                     <li><a href="rezervacija.html">Rezervacija</a></li>
                     <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="prijava.html">Prijava</a></li>
                 </ul>
             </div>
             <div>
