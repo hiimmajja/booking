@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prijavi se na svoj račun ili napravi novi na Beauty Booking Tuzla.">
+    <title>Beauty Booking Tuzla | Prijava</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="slike/logo.png">
+</head>
+<body>
+
+    <!-- ZAGLAVLJE -->
+    <header class="site-header">
+        <div class="header-inner">
+            <a class="brand" href="index.html">
+                <img class="logo" src="slike/logo.png" alt="Logo Beauty Booking">
+                <span class="logo-title">Beauty Booking</span>
+            </a>
+
+            <!-- Meni za mobitel bez JavaScripta: skriveni checkbox + label (hamburger) + CSS selektor :checked -->
+            <input type="checkbox" id="menu-checkbox" class="menu-checkbox" aria-label="Otvori ili zatvori meni">
+
+            <nav class="topnav" aria-label="Glavna navigacija">
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="saloni.html">Saloni</a></li>
+                    <li><a href="tretmani.html">Tretmani</a></li>
+                    <li><a href="recenzije.html">Recenzije</a></li>
+                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                </ul>
+            </nav>
+
+            <div class="header-actions">
+                <a class="btn btn-primary header-cta" href="rezervacija.html">Rezerviši termin</a>
+                <a class="icon-btn active" href="prijava.html" aria-label="Prijava" title="Prijava" aria-current="page">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="8" r="4"></circle>
+                        <path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"></path>
+                    </svg>
+                </a>
+                <label class="menu-toggle" for="menu-checkbox" title="Meni">
+                    ☰
+                </label>
+            </div>
+        </div>
+    </header>
+
+    <section class="page-head">
+        <div class="page-head-inner">
+            <h1>Prijava</h1>
+            <p>Prijavi se da brže rezervišeš termine i pratiš svoje rezervacije, ili napravi novi račun.</p>
+        </div>
+    </section>
+
+    <main class="section">
+        <div class="form-layout equal">
+
+            <form class="form-card" action="#" method="post">
+                <fieldset>
+                    <legend>Prijava</legend>
+                    <div class="form-grid">
+                        <div class="field full">
+                            <label for="l-email">E-mail adresa</label>
+                            <input type="email" id="l-email" name="email" required autocomplete="email" placeholder="ime@primjer.ba">
+                        </div>
+                        <div class="field full">
+                            <label for="l-lozinka">Lozinka</label>
+                            <input type="password" id="l-lozinka" name="lozinka" required autocomplete="current-password" minlength="8">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <label class="check">
+                    <input type="checkbox" name="zapamti">
+                    <span>Zapamti me na ovom uređaju</span>
+                </label>
+
+                <button class="btn btn-primary btn-block" type="submit">Prijavi se</button>
+                <p class="form-link"><a href="#">Zaboravljena lozinka?</a></p>
+            </form>
+
+            <form class="form-card" id="registracija" action="#" method="post">
+                <fieldset>
+                    <legend>Napravi račun</legend>
+                    <div class="form-grid">
+                        <div class="field">
+                            <label for="r-ime">Ime</label>
+                            <input type="text" id="r-ime" name="ime" required autocomplete="given-name">
+                        </div>
+                        <div class="field">
+                            <label for="r-prezime">Prezime</label>
+                            <input type="text" id="r-prezime" name="prezime" required autocomplete="family-name">
+                        </div>
+                        <div class="field full">
+                            <label for="r-email">E-mail adresa</label>
+                            <input type="email" id="r-email" name="email" required autocomplete="email">
+                        </div>
+                        <div class="field">
+                            <label for="r-lozinka">Lozinka</label>
+                            <input type="password" id="r-lozinka" name="lozinka" required autocomplete="new-password" minlength="8">
+                        </div>
+                        <div class="field">
+                            <label for="r-lozinka2">Ponovi lozinku</label>
+                            <input type="password" id="r-lozinka2" name="lozinka2" required autocomplete="new-password" minlength="8">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <label class="check">
+                    <input type="checkbox" name="uslovi" required>
+                    <span>Slažem se s uslovima korištenja i politikom privatnosti.</span>
+                </label>
+
+                <button class="btn btn-soft btn-block" type="submit">Registruj se</button>
+            </form>
+
+        </div>
+    </main>
+
+    <!-- PODNOŽJE -->
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h3>Beauty Booking Tuzla d.o.o.</h3>
+                <p>📍 Turalibegova 24, 75000 Tuzla, BiH</p>
+                <p>📞 +387 35 250 111</p>
+                <p>✉️ info@beautybooking.ba</p>
+            </div>
+            <div>
+                <h3>Stranice</h3>
+                <ul>
+                    <li><a href="index.html">Početna</a></li>
+                    <li><a href="saloni.html">Saloni</a></li>
+                    <li><a href="tretmani.html">Tretmani</a></li>
+                    <li><a href="recenzije.html">Recenzije</a></li>
+                    <li><a href="rezervacija.html">Rezervacija</a></li>
+                    <li><a href="kontakt.html">Kontakt</a></li>
+                    <li><a href="prijava.html">Prijava</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3>Radno vrijeme</h3>
+                <p>Ponedjeljak – subota</p>
+                <p>08:00 – 20:00h</p>
+                <p>Nedjelja: zatvoreno</p>
+            </div>
+        </div>
+        <div class="footer-copy">
+            © 2026 Beauty Booking Tuzla. Sva prava zadržana.
+        </div>
+    </footer>
+
+</body>
+</html>
